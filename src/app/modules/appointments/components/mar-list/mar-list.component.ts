@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./mar-list.component.scss']
 })
 export class MarListComponent {
-
+  items = ["Marina", "Vera", "Denis"]
 }
