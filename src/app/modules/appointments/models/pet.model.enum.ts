@@ -4,8 +4,3 @@ export const enum AnimalType{
   hamster = 'hamster',
   parrot = 'parrot'
 }
-export interface Pets{
-  id: number,
-  name: string,
-  type: AnimalType
-}

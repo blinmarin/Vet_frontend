@@ -1,1 +1,15 @@
-<p *ngFor="let item of items">{{item}}</p>
+<p *ngFor="let item of items_appointments">
+    {{item.id}},
+    {{item.pet.name}},
+    {{item.pet.type}},
+    {{item.owner.name}},
+    {{item.owner.phone}},
+    {{item.status}},
+    {{item.description}}
+</p>
+
+
+
+
+
+

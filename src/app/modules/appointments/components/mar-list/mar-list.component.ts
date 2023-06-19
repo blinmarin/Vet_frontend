@@ -1,38 +1,21 @@
 import { Component } from '@angular/core';
-import { Appointments, Status } from '../../models/appointment';
-import { AnimalType, Pets } from '../../models/pet';
-import { Owner } from '../../models/owner';
+import { Pet } from '../../models/pet.model';
+import { pets } from 'src/app/data/pet.data';
+import { Owner } from '../../models/owner.model';
+import { owners } from 'src/app/data/owner.data';
+import { Appointment } from '../../models/appointment.model';
+import { appointments } from 'src/app/data/appointment.data';
 
 @Component({
   selector: 'app-mar-list',
   templateUrl: './mar-list.component.html',
   styleUrls: ['./mar-list.component.scss']
 })
+
 export class MarListComponent {
+  items_pets: Pet[] = pets
+  items_owners: Owner[] = owners
+  items_appointments: Appointment[] = appointments
 
-  items_pets: Pets[] = [
-    {
-      id: 1,
-      name: 'Bagira',
-      type: AnimalType.cat
-    }
-  ]
 
-  item_owners: Owner[] = [
-    {
-      id: 1,
-      name: 'Marina',
-      phone: '8-800-555-35-35'
-    }
-]
-
-  items: Appointments[] = [
-    {
-      id: 1,
-      pet: this.items_pets[1],
-      owner: this.item_owners[1],
-      status: Status.registered,
-      description: 'Я в своем познании настолько преисполнился, что я как будто бы уже сто триллионов...'
-    }
-  ]
 }
