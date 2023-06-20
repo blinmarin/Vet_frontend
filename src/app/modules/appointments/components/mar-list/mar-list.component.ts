@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Pet } from '../../models/pet.model';
-import { pets } from 'src/app/data/pet.data';
+import { pets } from 'src/data/pet.data';
 import { Owner } from '../../models/owner.model';
-import { owners } from 'src/app/data/owner.data';
+import { owners } from 'src/data/owner.data';
 import { Appointment } from '../../models/appointment.model';
-import { appointments } from 'src/app/data/appointment.data';
+import { appointments } from 'src/data/appointment.data';
 
 @Component({
   selector: 'app-mar-list',

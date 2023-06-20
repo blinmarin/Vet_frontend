@@ -1,5 +1,5 @@
-import { Appointment } from "../modules/appointments/models/appointment.model";
-import { AppointmentStatus } from "../modules/appointments/models/appointment.model.enum";
+import { Appointment } from "../app/modules/appointments/models/appointment.model";
+import { AppointmentStatus } from "../app/modules/appointments/models/appointment.model.enum";
 import { pets } from "./pet.data";
 
 export const appointments: Appointment[] = [
