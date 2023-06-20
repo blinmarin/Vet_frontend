@@ -1,5 +1,4 @@
-
-  <div class="legend-wrapper">
+<!-- <div class="legend-wrapper">
     <div class="block">
       <div class="legend IsYellow"></div>
       <div class="text">Клиент записан</div>
@@ -19,22 +18,35 @@
       <div class="legend IsBlue"></div>
       <div class="text">Запись перенесена</div>
     </div>
+  </div> -->
+
+<div class="head">
+  <div>Статус</div>
+  <div>Вид животного</div>
+  <div>Кличка питомца</div>
+  <div>Хозяин</div>
+  <div>Описание</div>
+
+</div>
 
 
-  </div>
 
 
+<div class="wrapper" *ngFor="let item of items_appointments; let first=first;" [ngClass] = "{first: first}">
 
-<div class="wrapper" *ngFor="let item of items_appointments">
-  <!-- <div class="id">{{item.id}}</div> -->
-  <div class="status IsYellow" *ngIf="item.status == 'registered'"></div>
-  <div class="status IsGreen" *ngIf="item.status == 'completed'"></div>
-  <div class="status IsRed" *ngIf="item.status == 'canceled'"></div>
-  <div class="status IsBlue" *ngIf="item.status == 'rescheduled'"></div>
+  <div class="status IsYellow" *ngIf="item.status == 'registered'" title='Клиент записан'></div>
+  <div class="status IsGreen" *ngIf="item.status == 'completed'" title='Приём проведён'></div>
+  <div class="status IsRed" *ngIf="item.status == 'canceled'" title='Запись отменена'></div>
+  <div class="status IsBlue" *ngIf="item.status == 'rescheduled'" title='Запись перенесена'></div>
 
   <div class="type">{{item.pet.type}}</div>
   <div class="pet">{{item.pet.name}}</div>
-  <div class="owner">{{item.owner.name}}</div>
-  <div class="phone">{{item.owner.phone}}</div>
+
+  <div>
+    <div class="owner">{{item.owner.name}}</div>
+    <div class="phone">{{item.owner.phone}}</div>
+  </div>
+
   <div class="description">{{item.description}}</div>
+
 </div>

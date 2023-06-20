@@ -1,61 +1,62 @@
+// список
+
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 1fr 2fr 2fr 3fr 8fr;
   font-size: 17px;
   font-weight: 500;
   color: white;
-  margin: 1%;
-  margin-left: 3%;
-  margin-right: 3%;
+  margin: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
   background-color: #3d6594;
-  padding: 2%;
+  padding: 20px;
   border-radius: 25px;
 
   &:hover {
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
     background-color: #6495ED;
     transform: scale(1.02);
   }
 
   .status {
     border-radius: 25px;
-    width: 7%;
+    width: 12px;
   }
 
 
 }
 
-.legend-wrapper{
-    width: 20%;
-    height: 15%;
-    margin: 3%;
-    margin-bottom: 1%;
+// легенда
+
+.legend-wrapper {
+  width: 200px;
+  height: 90px;
+  margin: 50px;
+  margin-bottom: 10px;
 }
 
-.block{
-    width: 100%;
-    height: 25%;
-    white-space:nowrap
+.block {
+  width: 100%;
+  height: 25%;
+  white-space: nowrap
 }
 
-.legend{
-    width: 50%;
-    height: 50%;
-    display:inline-block;
-    border-radius: 25px;
+.legend {
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+  border-radius: 25px;
 }
 
-.text{
-    margin-left: 5%;
-    display:inline-block;
-    font-weight: 500;
+.text {
+  margin-left: 10px;
+  display: inline-block;
+  font-weight: 500;
 }
 
 
-
-
-
-
+// статус
 
 
 .IsYellow {
@@ -72,4 +73,26 @@
 
 .IsBlue {
   background-color: #00BFFF;
+}
+
+// заголовки
+
+.head {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 3fr 8fr;
+  font-size: 14px;
+  color: #3d6594;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  margin-left: 30px;
+  margin-right: 30px;
+  border: 2px solid #3d6594;
+  background-color: #AFEEEE;
+  padding: 10px;
+  border-radius: 25px;
+
+}
+
+.first {
+  margin-top: 0px;
 }
