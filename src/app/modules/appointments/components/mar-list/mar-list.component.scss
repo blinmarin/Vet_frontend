@@ -1,1 +1,75 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+  margin: 1%;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: #3d6594;
+  padding: 2%;
+  border-radius: 25px;
 
+  &:hover {
+    transition-duration: 0.4s;
+    background-color: #6495ED;
+    transform: scale(1.02);
+  }
+
+  .status {
+    border-radius: 25px;
+    width: 7%;
+  }
+
+
+}
+
+.legend-wrapper{
+    width: 20%;
+    height: 15%;
+    margin: 3%;
+    margin-bottom: 1%;
+}
+
+.block{
+    width: 100%;
+    height: 25%;
+    white-space:nowrap
+}
+
+.legend{
+    width: 50%;
+    height: 50%;
+    display:inline-block;
+    border-radius: 25px;
+}
+
+.text{
+    margin-left: 5%;
+    display:inline-block;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+.IsYellow {
+  background-color: yellow;
+}
+
+.IsGreen {
+  background-color: #32CD32;
+}
+
+.IsRed {
+  background-color: red;
+}
+
+.IsBlue {
+  background-color: #00BFFF;
+}

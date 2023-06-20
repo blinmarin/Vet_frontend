@@ -1,5 +1,5 @@
-import { Pet } from "../modules/appointments/models/pet.model";
-import { AnimalType } from "../modules/appointments/models/pet.model.enum";
+import { Pet } from "../app/modules/appointments/models/pet.model";
+import { AnimalType } from "../app/modules/appointments/models/pet.model.enum";
 import { owners } from "./owner.data";
 
 export const pets: Pet[] = [

@@ -14,15 +14,22 @@ export const appointments: Appointment[] = [
     id: 2,
     pet: pets[1],
     owner: pets[1].owner,
-    status: AppointmentStatus.registered,
+    status: AppointmentStatus.completed,
     description: 'Наталья, морская пехота! Стартуем!'
   },
   {
     id: 3,
     pet: pets[2],
     owner: pets[2].owner,
-    status: AppointmentStatus.registered,
+    status: AppointmentStatus.canceled,
     description: 'Зубенко Михаил Петрович, вор в законе, мафиозник'
+  },
+  {
+    id: 4,
+    pet: pets[3],
+    owner: pets[3].owner,
+    status: AppointmentStatus.rescheduled,
+    description: 'Имя Ибрагим вам что-нибудь говорит? Прекрасное имя. Аллах акбар.'
   }
 
 ]

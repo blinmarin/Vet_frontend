@@ -1,15 +1,40 @@
-<p *ngFor="let item of items_appointments">
-    {{item.id}},
-    {{item.pet.name}},
-    {{item.pet.type}},
-    {{item.owner.name}},
-    {{item.owner.phone}},
-    {{item.status}},
-    {{item.description}}
-</p>
+
+  <div class="legend-wrapper">
+    <div class="block">
+      <div class="legend IsYellow"></div>
+      <div class="text">Клиент записан</div>
+    </div>
+
+    <div class="block">
+      <div class="legend IsGreen"></div>
+      <div class="text">Приём проведен</div>
+    </div>
+
+    <div class="block">
+      <div class="legend IsRed"></div>
+      <div class="text">Запись отменена</div>
+    </div>
+
+    <div class="block">
+      <div class="legend IsBlue"></div>
+      <div class="text">Запись перенесена</div>
+    </div>
+
+
+  </div>
 
 
 
+<div class="wrapper" *ngFor="let item of items_appointments">
+  <!-- <div class="id">{{item.id}}</div> -->
+  <div class="status IsYellow" *ngIf="item.status == 'registered'"></div>
+  <div class="status IsGreen" *ngIf="item.status == 'completed'"></div>
+  <div class="status IsRed" *ngIf="item.status == 'canceled'"></div>
+  <div class="status IsBlue" *ngIf="item.status == 'rescheduled'"></div>
 
-
-
+  <div class="type">{{item.pet.type}}</div>
+  <div class="pet">{{item.pet.name}}</div>
+  <div class="owner">{{item.owner.name}}</div>
+  <div class="phone">{{item.owner.phone}}</div>
+  <div class="description">{{item.description}}</div>
+</div>

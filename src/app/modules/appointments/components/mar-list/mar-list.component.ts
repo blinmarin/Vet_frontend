@@ -17,5 +17,18 @@ export class MarListComponent {
   items_owners: Owner[] = owners
   items_appointments: Appointment[] = appointments
 
+  // {
+  //   if (status==="registered"){
+  //     .style.backgroundColor = "yellow"
+  //   }
+  // }
 
+  Colorclass(var_status: string) {
+    if (var_status==="registered"){
+      var element = document.getElementById("status")
+      console.log(element)
+      // element.classList.add("mystyle");
+      }
+
+}
 }
