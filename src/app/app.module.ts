@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppointmentsModule } from './modules/appointments/appointments.module';
 
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,6 +17,7 @@ import { AppointmentsModule } from './modules/appointments/appointments.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     AppointmentsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

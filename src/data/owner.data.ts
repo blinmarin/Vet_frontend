@@ -1,4 +1,4 @@
-import { Owner } from "../modules/appointments/models/owner.model";
+import { Owner } from "../app/modules/appointments/models/owner.model";
 
 export const owners: Owner[] = [
   {
