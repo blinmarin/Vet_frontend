@@ -1,24 +1,24 @@
-<!-- <div class="legend-wrapper">
-    <div class="block">
-      <div class="legend IsYellow"></div>
-      <div class="text">Клиент записан</div>
-    </div>
+<div class="legend-wrapper">
+  <div class="block">
+    <div class="legend IsYellow"></div>
+    <div class="text">Клиент записан</div>
+  </div>
 
-    <div class="block">
-      <div class="legend IsGreen"></div>
-      <div class="text">Приём проведен</div>
-    </div>
+  <div class="block">
+    <div class="legend IsGreen"></div>
+    <div class="text">Приём проведен</div>
+  </div>
 
-    <div class="block">
-      <div class="legend IsRed"></div>
-      <div class="text">Запись отменена</div>
-    </div>
+  <div class="block">
+    <div class="legend IsRed"></div>
+    <div class="text">Запись отменена</div>
+  </div>
 
-    <div class="block">
-      <div class="legend IsBlue"></div>
-      <div class="text">Запись перенесена</div>
-    </div>
-  </div> -->
+  <div class="block">
+    <div class="legend IsBlue"></div>
+    <div class="text">Запись перенесена</div>
+  </div>
+</div>
 
 <div class="head">
   <div>Статус</div>
@@ -32,14 +32,18 @@
 
 
 
-<div class="wrapper" *ngFor="let item of items_appointments; let first=first;" [ngClass] = "{first: first}">
+<div class="wrapper" *ngFor="let item of items_appointments; let first=first;" [ngClass]="{first: first}">
 
   <div class="status IsYellow" *ngIf="item.status == 'registered'" title='Клиент записан'></div>
   <div class="status IsGreen" *ngIf="item.status == 'completed'" title='Приём проведён'></div>
   <div class="status IsRed" *ngIf="item.status == 'canceled'" title='Запись отменена'></div>
   <div class="status IsBlue" *ngIf="item.status == 'rescheduled'" title='Запись перенесена'></div>
 
-  <div class="type">{{item.pet.type}}</div>
+  <div class="picture IsCat" *ngIf="item.pet.type == 'cat'" title='Кот'></div>
+  <div class="picture IsDog" *ngIf="item.pet.type == 'dog'" title='Собака'></div>
+  <div class="picture IsHamster" *ngIf="item.pet.type == 'hamster'" title='Хомяк'></div>
+  <div class="picture IsParrot" *ngIf="item.pet.type == 'parrot'" title='Попугай'></div>
+
   <div class="pet">{{item.pet.name}}</div>
 
   <div>

@@ -98,3 +98,28 @@
 .first {
   margin-top: 0px;
 }
+
+// аватарки
+
+.picture {
+  background-size: contain;
+  width: 55px;
+  height: 55px;
+  border-radius: 30px;
+}
+
+.IsParrot {
+  background-image: url(./../../../../../img/parrot.jpg);
+}
+
+.IsHamster {
+  background-image: url(./../../../../../img/hamster.jpg);
+}
+
+.IsDog {
+  background-image: url(./../../../../../img/dog.jpg);
+}
+
+.IsCat {
+  background-image: url(./../../../../../img/cat.jpg);
+}
