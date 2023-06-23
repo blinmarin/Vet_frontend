@@ -5,6 +5,7 @@ import { Owner } from '../../models/owner.model';
 import { owners } from 'src/data/owner.data';
 import { Appointment } from '../../models/appointment.model';
 import { appointments } from 'src/data/appointment.data';
+import { MarAppointmentListModel } from './model/mar-appointment-list.model';
 
 
 @Component({
@@ -13,20 +14,20 @@ import { appointments } from 'src/data/appointment.data';
   styleUrls: ['./mar-appointment-list.component.scss']
 })
 
-export class MarAppointmentListComponent{
-  // mass!: MarAppointmentList
+export class MarAppointmentListComponent implements OnInit{
+  mass!: MarAppointmentListModel
 
   items_pets: Pet[] = pets
   items_owners: Owner[] = owners
   items_appointments: Appointment[] = appointments
 
-  // ngOnInit(): void {
-  //   this.mass = {
-  //     name: 'Appointments',
-  //     headers: ['id', 'pet', 'owner', 'status', 'description'],
-  //     data: this.items_appointments,
-  //   };
-  // }
+  ngOnInit(): void {
+    this.mass = {
+      name: 'Appointments',
+      headers: ['id', 'pet', 'owner', 'status', 'description'],
+      data: this.items_appointments,
+    };
+  }
 
   AccordionFlag(elem: HTMLDivElement){
     return (elem.offsetHeight > 100)

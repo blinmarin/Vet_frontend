@@ -6,6 +6,7 @@ import { Appointment } from 'src/app/modules/appointments/models/appointment.mod
 import { Owner } from 'src/app/modules/appointments/models/owner.model';
 import { appointments } from 'src/data/appointment.data';
 import { owners } from 'src/data/owner.data';
+import { MarAppointmentListModel } from 'src/app/modules/appointments/components/mar-appointment-list/model/mar-appointment-list.model';
 
 
 @Component({
@@ -13,22 +14,22 @@ import { owners } from 'src/data/owner.data';
   templateUrl: './mar-grid-list.component.html',
   styleUrls: ['./mar-grid-list.component.scss']
 })
-export class MarGridListComponent implements OnInit{
+export class MarGridListComponent{
 
-  // @Input() settings!: MarAppointmentList
+  @Input() settings!: MarAppointmentListModel
 
-  settings!: MarGridListSetting //todo @input
+  // settings!: MarGridListSetting //todo @input
 
-  items_pets: Pet[] = pets
-  items_owners: Owner[] = owners
-  items_appointments: Appointment[] = appointments
+  // items_pets: Pet[] = pets
+  // items_owners: Owner[] = owners
+  // items_appointments: Appointment[] = appointments
 
-  ngOnInit(): void {
-    this.settings = {
-      name: 'Murka',
-      headers: ['id', 'pet', 'owner', 'status', 'description'],
-      data: this.items_appointments
-    }
-  }
+  // ngOnInit(): void {
+  //   this.settings = {
+  //     name: 'Murka',
+  //     headers: ['id', 'pet', 'owner', 'status', 'description'],
+  //     data: this.items_appointments
+  //   }
+  // }
 
 }
