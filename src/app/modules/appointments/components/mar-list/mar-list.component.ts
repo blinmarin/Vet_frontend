@@ -6,7 +6,6 @@ import { owners } from 'src/data/owner.data';
 import { Appointment } from '../../models/appointment.model';
 import { appointments } from 'src/data/appointment.data';
 
-
 @Component({
   selector: 'app-mar-list',
   templateUrl: './mar-list.component.html',
@@ -17,5 +16,15 @@ export class MarListComponent {
   items_pets: Pet[] = pets
   items_owners: Owner[] = owners
   items_appointments: Appointment[] = appointments
+
+  AAA(x:any){
+    console.log(typeof(x))
+  }
+
+  AccordionFlag(elem: HTMLDivElement){
+    return (elem.offsetHeight > 100)
+  }
+
+
 
 }
