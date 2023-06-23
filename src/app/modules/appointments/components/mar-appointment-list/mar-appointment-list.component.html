@@ -1,4 +1,4 @@
-<div class="legend-wrapper">
+<!-- <div class="legend-wrapper">
   <div class="block">
     <div class="legend IsYellow"></div>
     <div class="text">Клиент записан</div>
@@ -51,17 +51,20 @@
     <div class="phone">{{item.owner.phone}}</div>
   </div>
 
-  {{AAA(item.description)}}
-
-  <app-accordion *ngIf="AccordionFlag(mar)" [text]=[item.description]></app-accordion>
+  <app-accordion *ngIf="AccordionFlag(mar)" [text]='item.description'></app-accordion>
   <div class="description" *ngIf="!AccordionFlag(mar)">{{item.description}}</div>
 
   <div class="icon">
-    <app-mar-edit-button title='Редактировать'></app-mar-edit-button>
+    <app-mar-edit-button (blabla)="sayBBB($event)" [pet]='item.pet' title='Редактировать'></app-mar-edit-button>
   </div>
 
   <div class="icon">
-    <app-mar-delete-button title='Удалить'></app-mar-delete-button>
+    <app-mar-delete-button (superClick)='sayAAA($event, item.pet.name)' title='Удалить'></app-mar-delete-button>
   </div>
 
-</div>
+</div> -->
+
+<!-- <app-mar-grid-list [settings] = 'mass'></app-mar-grid-list> -->
+<app-mar-grid-list></app-mar-grid-list>
+
+

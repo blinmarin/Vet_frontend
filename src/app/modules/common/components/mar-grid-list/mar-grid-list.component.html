@@ -1,0 +1,22 @@
+<div class = 'head'>
+  <div *ngFor='let header of settings.headers'>{{header}}</div>
+</div>
+
+<div>
+  <div class="wrapper" *ngFor="let dat of settings.data" >
+    <div *ngFor="let header of settings.headers">{{dat[header]}}</div>
+
+    <div class="icon">
+      <app-mar-edit-button  title='Редактировать'></app-mar-edit-button>
+    </div>
+
+    <div class="icon">
+      <app-mar-delete-button title='Удалить'></app-mar-delete-button>
+    </div>
+
+  </div>
+</div>
+
+
+
+
