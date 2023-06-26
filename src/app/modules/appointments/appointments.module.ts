@@ -19,8 +19,8 @@ const MarComponents = [
   exports:[
     MarComponents,
   ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
+  // schemas: [
+  //   CUSTOM_ELEMENTS_SCHEMA
+  // ]
 })
 export class AppointmentsModule { }

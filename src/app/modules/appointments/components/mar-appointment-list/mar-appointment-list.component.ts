@@ -21,11 +21,22 @@ export class MarAppointmentListComponent implements OnInit{
   items_owners: Owner[] = owners
   items_appointments: Appointment[] = appointments
 
+  NewMass(mass: Appointment): object{
+    const dat = {
+      id: mass.id,
+      pet: mass.pet.name,
+      owner: mass.owner.name + mass.owner.phone,
+      status: mass.status,
+      description: mass.description
+    }
+    return dat
+  }
+
   ngOnInit(): void {
     this.mass = {
       name: 'Appointments',
       headers: ['id', 'pet', 'owner', 'status', 'description'],
-      data: this.items_appointments,
+      data: this.items_appointments.map(this.NewMass)
     };
   }
 
@@ -40,6 +51,11 @@ export class MarAppointmentListComponent implements OnInit{
   sayBBB(event: Pet){
     alert(event.name)
   }
+
+
+
+
+
 
 
 
