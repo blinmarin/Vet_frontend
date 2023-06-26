@@ -1,22 +1,24 @@
-<div class = 'head'>
-  <div *ngFor='let header of settings.headers'>{{header}}</div>
+<div class='head'>
+  <ng-container *ngFor='let column of settings.columns'>
+    <div *ngIf="column.visible">
+      {{column.caption}}
+    </div>
+  </ng-container>
 </div>
 
 <div>
-  <div class="wrapper" *ngFor="let dat of settings.data" >
-    <div *ngFor="let header of settings.headers">{{dat[header]}}</div>
+  <div id="wrap" class="wrapper" *ngFor="let dat of settings.data">
+    <ng-container *ngFor="let column of settings.columns">
+      <app-mar-grid-template *ngIf="column.visible" [data]='dat[column.dataField]' [column]="column"></app-mar-grid-template>
+    </ng-container>
 
-    <div class="icon">
-      <app-mar-edit-button  title='Редактировать'></app-mar-edit-button>
+    <div>
+      <app-mar-edit-button title='Редактировать'></app-mar-edit-button>
     </div>
 
-    <div class="icon">
+    <div>
       <app-mar-delete-button title='Удалить'></app-mar-delete-button>
     </div>
 
   </div>
 </div>
-
-
-
-

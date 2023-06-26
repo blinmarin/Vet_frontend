@@ -2,7 +2,7 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 3fr 8fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr 2fr 3fr 8fr 1fr 1fr;
   font-size: 17px;
   font-weight: 500;
   color: white;
@@ -25,59 +25,12 @@
   }
 }
 
-// легенда
-
-.legend-wrapper {
-  width: 200px;
-  height: 90px;
-  margin: 50px;
-  margin-bottom: 10px;
-}
-
-.block {
-  width: 100%;
-  height: 25%;
-  white-space: nowrap
-}
-
-.legend {
-  width: 50%;
-  height: 50%;
-  display: inline-block;
-  border-radius: 25px;
-}
-
-.text {
-  margin-left: 10px;
-  display: inline-block;
-  font-weight: 500;
-}
-
-
-// статус
-
-
-.IsYellow {
-  background-color: yellow;
-}
-
-.IsGreen {
-  background-color: #32CD32;
-}
-
-.IsRed {
-  background-color: red;
-}
-
-.IsBlue {
-  background-color: #00BFFF;
-}
 
 // заголовки
 
 .head {
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 3fr 8fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr 2fr 3fr 8fr 1fr 1fr;
   font-size: 14px;
   color: #3d6594;
   margin-top: 15px;
@@ -91,31 +44,5 @@
 
 }
 
-.first {
-  margin-top: 0px;
-}
 
-// аватарки
 
-.picture {
-  background-size: contain;
-  width: 55px;
-  height: 55px;
-  border-radius: 30px;
-}
-
-.IsParrot {
-  background-image: url(./../../../../../img/parrot.jpg);
-}
-
-.IsHamster {
-  background-image: url(./../../../../../img/hamster.jpg);
-}
-
-.IsDog {
-  background-image: url(./../../../../../img/dog.jpg)
-}
-
-.IsCat {
-  background-image: url(./../../../../../img/cat.jpg);
-}

@@ -1,0 +1,26 @@
+<ng-container *ngIf="column.type == 'default'">
+  <div>{{data}}</div>
+</ng-container>
+
+<ng-container *ngIf="column.type == 'status'">
+  <div class="status IsYellow" *ngIf="data== 'registered'" title='Клиент записан'></div>
+  <div class="status IsGreen" *ngIf="data== 'completed'" title='Приём проведён'></div>
+  <div class="status IsRed" *ngIf="data == 'canceled'" title='Запись отменена'></div>
+  <div class="status IsBlue" *ngIf="data == 'rescheduled'" title='Запись перенесена'></div>
+</ng-container>
+
+<ng-container *ngIf="column.type == 'pet_type'">
+  <div class="picture IsCat" *ngIf="data == 'cat'" title='Кот'></div>
+  <div class="picture IsDog" *ngIf="data == 'dog'" title='Собака'></div>
+  <div class="picture IsHamster" *ngIf="data == 'hamster'" title='Хомяк'></div>
+  <div class="picture IsParrot" *ngIf="data == 'parrot'" title='Попугай'></div>
+</ng-container>
+
+<ng-container *ngIf="column.type == 'description'">
+  <ng-container>
+    <app-accordion *ngIf="AccordionFlag(data)" [text]='data'></app-accordion>
+    <div class="description" *ngIf="!AccordionFlag(data)">{{data}}</div>
+  </ng-container>
+</ng-container>
+
+
