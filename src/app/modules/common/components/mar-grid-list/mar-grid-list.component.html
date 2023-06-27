@@ -1,4 +1,4 @@
-<div class='head'>
+<div class='head' [style.grid-template-columns]='gridAreas'>
   <ng-container *ngFor='let column of settings.columns'>
     <div *ngIf="column.visible">
       {{column.caption}}
@@ -7,9 +7,10 @@
 </div>
 
 <div>
-  <div id="wrap" class="wrapper" *ngFor="let dat of settings.data">
+  <div class="wrapper" [style.grid-template-columns]='gridAreas' *ngFor="let dat of settings.data">
     <ng-container *ngFor="let column of settings.columns">
-      <app-mar-grid-template *ngIf="column.visible" [data]='dat[column.dataField]' [column]="column"></app-mar-grid-template>
+      <app-mar-grid-template *ngIf="column.visible" [data]='dat[column.dataField]' [column]="column">
+      </app-mar-grid-template>
     </ng-container>
 
     <div>

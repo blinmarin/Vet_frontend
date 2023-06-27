@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Owner } from '../../models/owner.model';
+import { Owner } from '../../../appointments/models/owner.model';
 import { owners } from 'src/data/owner.data';
 import { MarGridListSetting } from 'src/app/modules/common/components/mar-grid-list/models/mar-grid-list-setting.model';
 
@@ -21,7 +21,7 @@ export class MarOwnersListComponent {
         {
           caption: 'id',
           dataField: 'id',
-          visible: true,
+          visible: false,
           type: 'default',
         },
         {
