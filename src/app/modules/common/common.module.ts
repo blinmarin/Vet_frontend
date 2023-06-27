@@ -8,6 +8,7 @@ import { MarAccordionComponent } from './components/accordion/accordion.componen
 import { MarDeleteButtonComponent } from './components/icons-button/mar-delete-button/mar-delete-button.component';
 import { MarEditButtonComponent } from './components/icons-button/mar-edit-button/mar-edit-button.component';
 import { MarGridTemplateComponent } from './components/mar-grid-template/mar-grid-template.component';
+import { MarCreateButtonComponent } from './components/icons-button/mar-create-button/mar-create-button.component';
 
 
 const MarComponents = [
@@ -15,7 +16,8 @@ const MarComponents = [
   MarGridListComponent,
   MarEditButtonComponent,
   MarDeleteButtonComponent,
-  MarGridTemplateComponent
+  MarGridTemplateComponent,
+  MarCreateButtonComponent,
 ]
 
 @NgModule({

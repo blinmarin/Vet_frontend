@@ -34,7 +34,7 @@ export class MarPetsListComponent {
         visible: true,
         type: 'default'},
         {
-          caption: 'Тип животного',
+          caption: 'Вид животного',
           dataField: 'type',
           visible: true,
           type: 'pet_type',

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MarCommonModule } from '../common/common.module';
 import { MarOwnersListComponent } from './components/mar-owners-list/mar-owners-list.component';
 import { MarPetsListComponent } from './components/mar-pets-list/mar-pets-list.component';
+import { MarCreateComponent } from './components/mar-create/mar-create.component';
 
 
 const MarComponents = [
@@ -15,6 +16,7 @@ const MarComponents = [
     MarComponents,
     MarOwnersListComponent,
     MarPetsListComponent,
+    MarCreateComponent,
   ],
   imports: [
     BrowserModule,
