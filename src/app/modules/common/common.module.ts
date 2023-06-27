@@ -9,6 +9,7 @@ import { MarDeleteButtonComponent } from './components/icons-button/mar-delete-b
 import { MarEditButtonComponent } from './components/icons-button/mar-edit-button/mar-edit-button.component';
 import { MarGridTemplateComponent } from './components/mar-grid-template/mar-grid-template.component';
 import { MarCreateButtonComponent } from './components/icons-button/mar-create-button/mar-create-button.component';
+import { MarGridPanelComponent } from './components/mar-grid-panel/mar-grid-panel.component';
 
 
 const MarComponents = [
@@ -18,6 +19,7 @@ const MarComponents = [
   MarDeleteButtonComponent,
   MarGridTemplateComponent,
   MarCreateButtonComponent,
+  MarGridPanelComponent,
 ]
 
 @NgModule({
@@ -32,8 +34,6 @@ const MarComponents = [
   exports:[
     MarComponents,
   ],
-  // schemas: [
-  //   CUSTOM_ELEMENTS_SCHEMA
-  // ]
+
 })
 export class MarCommonModule { }

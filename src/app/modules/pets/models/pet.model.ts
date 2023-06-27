@@ -1,4 +1,4 @@
-import { Owner } from "./owner.model";
+import { Owner } from "../../owners/models/owner.model";
 import { AnimalType } from "./pet.model.enum";
 
 export interface Pet{

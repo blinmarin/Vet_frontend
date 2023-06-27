@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
-import { Pet } from '../../../../appointments/models/pet.model';
+import { Pet } from '../../../../pets/models/pet.model';
 
 @Component({
   selector: 'app-mar-edit-button',

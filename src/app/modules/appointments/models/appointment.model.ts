@@ -1,6 +1,6 @@
 import { AppointmentStatus } from "./appointment.model.enum";
-import { Owner } from "./owner.model";
-import { Pet } from "./pet.model";
+import { Owner } from "../../owners/models/owner.model";
+import { Pet } from "../../pets/models/pet.model";
 
 export interface Appointment{
   id: number,

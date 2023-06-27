@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { MarGridListSetting } from 'src/app/modules/common/components/mar-grid-list/models/mar-grid-list-setting.model';
-import { Pet } from '../../../appointments/models/pet.model';
+import { Pet } from '../../models/pet.model';
 import { pets } from 'src/data/pet.data';
-import { PetList } from '../../../appointments/models/petList.model';
+import { PetList } from '../../models/petList.model';
 
 @Component({
   selector: 'app-mar-pets-list',

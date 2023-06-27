@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Pet } from '../../models/pet.model';
+import { Pet } from '../../../pets/models/pet.model';
 import { pets } from 'src/data/pet.data';
-import { Owner } from '../../models/owner.model';
+import { Owner } from '../../../owners/models/owner.model';
 import { owners } from 'src/data/owner.data';
 import { Appointment } from '../../models/appointment.model';
 import { appointments } from 'src/data/appointment.data';
