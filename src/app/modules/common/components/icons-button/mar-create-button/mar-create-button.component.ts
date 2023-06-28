@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./mar-create-button.component.scss']
 })
 export class MarCreateButtonComponent {
+  openModal(){
 
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-mar-grid-panel',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./mar-grid-panel.component.scss']
 })
 export class MarGridPanelComponent {
+  @Output() showDialogClick = new EventEmitter();
+
+  showDialog(){
+    this.showDialogClick.emit()
+  }
+
+
 
 }

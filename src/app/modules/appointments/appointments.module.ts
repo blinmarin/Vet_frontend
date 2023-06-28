@@ -2,17 +2,17 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MarAppointmentListComponent } from './components/mar-appointment-list/mar-appointment-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { MarCommonModule } from '../common/common.module';
-import { MarCreateComponent } from './components/mar-create/mar-create.component';
+import { CreateAppointmentComponent } from './components/create-appointment/create-appointment.component';
 
 
 const MarComponents = [
-  MarAppointmentListComponent
+  MarAppointmentListComponent,
+  CreateAppointmentComponent,
 ]
 
 @NgModule({
   declarations: [
     MarComponents,
-    MarCreateComponent,
   ],
   imports: [
     BrowserModule,
