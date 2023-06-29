@@ -97,6 +97,7 @@ export class MarAppointmentListComponent implements OnInit {
   }
 
 
+
   sayAAA(event: string, a: string) {
     alert(event + ' ' + a);
   }

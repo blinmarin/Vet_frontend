@@ -12,6 +12,9 @@ import { MarCreateButtonComponent } from './components/icons-button/mar-create-b
 import { MarGridPanelComponent } from './components/mar-grid-panel/mar-grid-panel.component';
 import { ModalWindowComponent } from './components/modal-window/modal-window.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MarGridSelectComponent } from './components/mar-grid-select/mar-grid-select.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 const MarComponents = [
   MarAccordionComponent,
@@ -22,17 +25,21 @@ const MarComponents = [
   MarCreateButtonComponent,
   MarGridPanelComponent,
   ModalWindowComponent,
+  MarGridSelectComponent,
 ]
 
 @NgModule({
   declarations: [
     MarComponents,
+
   ],
   imports: [
     CommonModule,
     CdkAccordionModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatSelectModule
 
   ],
   exports:[

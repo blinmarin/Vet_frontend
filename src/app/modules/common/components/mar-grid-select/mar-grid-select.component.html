@@ -1,0 +1,7 @@
+<div class="form">
+  <mat-select class="arrow">
+    <mat-option (click)="sendSelectOption(item.value)" *ngFor="let item of typeVariants" [value]='item.view'>{{item.view}}</mat-option>
+  </mat-select>
+</div>
+
+

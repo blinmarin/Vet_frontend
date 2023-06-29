@@ -1,0 +1,16 @@
+.form{
+  border: 1px solid gray;
+  height: 34px;
+  width: 168px;
+  border-radius: 2px;
+
+}
+
+::ng-deep .mat-mdc-select-arrow svg{
+  top: 0px !important;
+  left: 0px !important;
+
+}
+
+
+

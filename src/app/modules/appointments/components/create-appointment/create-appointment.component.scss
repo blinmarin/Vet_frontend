@@ -21,9 +21,11 @@
 }
 
 .textarea{
-  padding: 5px;
+ // padding: 5px;
+ // margin: 5px;
   display: inline-block;
   float: right;
+  height: 30px;
 }
 
 .description{
@@ -41,7 +43,7 @@
   height: 30px;
   background-color: #3d6594;
   color: white;
-  border-radius: 25px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
 
