@@ -1,14 +1,39 @@
 .form{
   border: 1px solid gray;
-  height: 34px;
+  height: 35px;
   width: 168px;
   border-radius: 2px;
 
+
+}
+
+::ng-deep .mat-mdc-select-arrow{
+  height: 100% !important;
+}
+
+::ng-deep .mat-mdc-select-arrow-wrapper{
+  height: 100% !important;
+}
+
+::ng-deep .mat-mdc-select-value{
+  height: 100%;
+}
+
+::ng-deep .mat-mdc-select-trigger{
+  height: 100%;
+}
+
+::ng-deep .mat-mdc-select{
+  height: 100%;
 }
 
 ::ng-deep .mat-mdc-select-arrow svg{
-  top: 0px !important;
-  left: 0px !important;
+
+  height: 100%;
+  top: 50% !important;
+  left: -20% !important;
+  background-color: #3d6594;
+  color: white;
 
 }
 
