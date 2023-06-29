@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { Pet } from '../../../../pets/models/pet.model';
+import { MarGridListSetting } from '../../mar-grid-list/models/mar-grid-list-setting.model';
 
 @Component({
   selector: 'app-mar-edit-button',
@@ -11,11 +12,14 @@ import { Pet } from '../../../../pets/models/pet.model';
 export class MarEditButtonComponent{
   @Output() superEdit = new EventEmitter<string>();
   @Output() blabla = new EventEmitter<Pet>();
+  @Output() edit = new EventEmitter();
   @Input() pet!: Pet;
 
-  superAbobus(){
-    this.pet.name = 'Abobus' + this.pet.name;
-    this.blabla.emit(this.pet);
+  editFunction(){
+    // this.pet.name = 'Abobus' + this.pet.name;
+    // this.blabla.emit(this.pet);
+    this.edit.emit();
+
   }
 
 }

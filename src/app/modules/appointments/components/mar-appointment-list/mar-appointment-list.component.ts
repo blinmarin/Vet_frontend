@@ -8,7 +8,7 @@ import { appointments } from 'src/data/appointment.data';
 import { MarGridListSetting } from 'src/app/modules/common/components/mar-grid-list/models/mar-grid-list-setting.model';
 import { AppointmentList } from '../../models/appointmentList.model';
 import { ModalViewService } from 'src/app/modules/common/services/modal-view.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { CreateAppointmentComponent } from '../create-appointment/create-appointment.component';
 
 
@@ -20,8 +20,8 @@ import { CreateAppointmentComponent } from '../create-appointment/create-appoint
 export class MarAppointmentListComponent implements OnInit {
   listSettings!: MarGridListSetting;
 
-
   constructor(public matDialog: MatDialog){}
+
 
   items_pets: Pet[] = pets;
   items_owners: Owner[] = owners;
@@ -92,9 +92,12 @@ export class MarAppointmentListComponent implements OnInit {
   }
 
   showCreateDialog(){
-    this.matDialog.open(CreateAppointmentComponent)
 
+    this.matDialog.open(CreateAppointmentComponent).afterClosed().subscribe((result)=>{
+      this.listSettings.data = this.items_appointments.map(this.mapAppointmentList)})
   }
+
+
 
 
 

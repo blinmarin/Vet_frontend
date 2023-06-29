@@ -3,7 +3,7 @@
     <p class="head">Создать запись</p>
     <div class="wrapper">
       <p class="text">Вид животного: </p>
-      <app-mar-grid-select class="textarea" [typeVariants]='types' (typeSelectOption)='getSelectOption($event)'></app-mar-grid-select>
+      <app-mar-select class="textarea" [typeVariants]='types' (typeSelectOption)='getSelectOption($event)'></app-mar-select>
     </div>
     <div class="wrapper">
       <p class="text">Кличка питомца: </p>
@@ -25,10 +25,10 @@
 
   <ng-container footer>
     <div class="button-wrapper">
-      <button (click)="saveAppointmentData(textInput_pet,
-                                          textInput_name,
-                                          textInput_phone,
-                                          textInput_description)">Создать</button>
+      <button (click)="saveAppointmentData(textInput_pet.value,
+                                          textInput_name.value,
+                                          textInput_phone.value,
+                                          textInput_description.value)">Создать</button>
     </div>
   </ng-container>
 

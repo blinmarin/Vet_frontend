@@ -27,6 +27,9 @@
   height: 100%;
 }
 
+::ng-deep .mat-mdc-select-value-text{
+  margin: 10px;
+}
 ::ng-deep .mat-mdc-select-arrow svg{
 
   height: 100%;

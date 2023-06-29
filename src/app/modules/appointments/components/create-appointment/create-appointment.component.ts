@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { MarGridSelectComponent } from 'src/app/modules/common/components/mar-grid-select/mar-grid-select.component';
-import { typeVariantsMass } from 'src/app/modules/common/models/grid-select.model';
 import { Owner } from 'src/app/modules/owners/models/owner.model';
 import { Pet } from 'src/app/modules/pets/models/pet.model';
 import { owners } from 'src/data/owner.data';
@@ -10,6 +8,7 @@ import { appointments } from 'src/data/appointment.data';
 import { AnimalType } from 'src/app/modules/pets/models/pet.model.enum';
 import { AppointmentStatus } from '../../models/appointment.model.enum';
 import { MatDialog } from '@angular/material/dialog';
+import { selectModel } from 'src/app/modules/common/components/mar-select/models/grid-select.model';
 
 @Component({
   selector: 'app-create-appointment',
@@ -27,10 +26,10 @@ export class CreateAppointmentComponent {
   }
 
 
-  saveAppointmentData(textInput_pet: HTMLInputElement,
-                      textInput_name: HTMLInputElement,
-                      textInput_phone: HTMLInputElement,
-                      textInput_description: HTMLTextAreaElement){
+  saveAppointmentData(textInput_pet: string,
+                      textInput_name: string,
+                      textInput_phone: string,
+                      textInput_description: string){
 
     let pet_id = pets[pets.length-1].id;
     let owner_id = owners[owners.length-1].id;
@@ -38,14 +37,14 @@ export class CreateAppointmentComponent {
 
     let OwnerItem: Owner = {
       id: owner_id+1,
-      name: textInput_name.value,
-      phone: textInput_phone.value
+      name: textInput_name,
+      phone: textInput_phone
     }
     owners.push(OwnerItem);
 
     let PetItem: Pet = {
       id: pet_id+1,
-      name: textInput_pet.value,
+      name: textInput_pet,
       type: this.textInput_type,
       owner: owners[OwnerItem.id]
     }
@@ -57,7 +56,7 @@ export class CreateAppointmentComponent {
       pet: pets[PetItem.id],
       owner: pets[PetItem.id].owner,
       status: AppointmentStatus.registered,
-      description: textInput_description.value
+      description: textInput_description
     }
 
     appointments.push(AppointmentItem);
@@ -70,7 +69,7 @@ export class CreateAppointmentComponent {
 
 
 
-  types: typeVariantsMass[] = [
+  types: selectModel[] = [
     {value: AnimalType.cat, view: 'котик'},
     {value: AnimalType.dog, view: 'пёсик'},
     {value: AnimalType.hamster, view: 'хомячок'},
