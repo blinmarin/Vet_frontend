@@ -17,12 +17,17 @@ import { selectModel } from 'src/app/modules/common/components/mar-select/models
 })
 export class CreateAppointmentComponent {
   textInput_type!: AnimalType;
+  textInput_status!: AppointmentStatus;
 
   constructor(public matDialog: MatDialog){}
 
 
-  getSelectOption(event: any){
+  getSelectOptionAnimal(event: any){
     this.textInput_type = event;
+  }
+
+  getSelectOptionStatus(event: any){
+    this.textInput_status = event;
   }
 
 
@@ -69,10 +74,17 @@ export class CreateAppointmentComponent {
 
 
 
-  types: selectModel[] = [
+  typesAnimals: selectModel[] = [
     {value: AnimalType.cat, view: 'котик'},
     {value: AnimalType.dog, view: 'пёсик'},
     {value: AnimalType.hamster, view: 'хомячок'},
     {value: AnimalType.parrot, view: 'попугайчик'},
+  ];
+
+  typesStatus: selectModel[] = [
+    {value: AppointmentStatus.registered, view: 'Клиент записан'},
+    {value: AppointmentStatus.completed, view: 'Приём проведен'},
+    {value: AppointmentStatus.rescheduled, view: 'Запись перенесена'},
+    {value: AppointmentStatus.canceled, view: 'Запись проведена'},
   ];
 }

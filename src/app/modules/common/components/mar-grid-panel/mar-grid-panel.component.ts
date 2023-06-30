@@ -8,6 +8,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class MarGridPanelComponent {
   @Output() showDialogClick = new EventEmitter();
 
+
+
   showDialog(){
     this.showDialogClick.emit()
   }

@@ -1,9 +1,13 @@
 <app-modal-window>
   <ng-container body>
     <p class="head">Создать запись</p>
+    <!-- <div class="wrapper" *ngIf="expression">
+      <p class="text">Статус: </p>
+      <app-mar-select class="textarea" [typeVariants]='typesStatus'></app-mar-select>
+    </div> -->
     <div class="wrapper">
       <p class="text">Вид животного: </p>
-      <app-mar-select class="textarea" [typeVariants]='types' (typeSelectOption)='getSelectOption($event)'></app-mar-select>
+      <app-mar-select class="textarea" [typeVariants]='typesAnimals' (typeSelectOption)='getSelectOptionAnimal($event)'></app-mar-select>
     </div>
     <div class="wrapper">
       <p class="text">Кличка питомца: </p>
