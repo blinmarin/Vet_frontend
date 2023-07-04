@@ -15,6 +15,7 @@ import { selectModel } from './models/grid-select.model';
 
 export class MarSelectComponent {
 
+@Input() label!: selectModel['view'];
 @Input() typeVariants!: selectModel[];
 @Output() typeSelectOption = new EventEmitter<string>();
 

@@ -15,6 +15,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { MarSelectComponent } from './components/mar-select/mar-select.component';
+import { MarAppointmentListComponent } from '../appointments/components/mar-appointment-list/mar-appointment-list.component';
+import { CreateAppointmentComponent } from '../appointments/components/create-appointment/create-appointment.component';
+
 
 const MarComponents = [
   MarAccordionComponent,
@@ -25,14 +28,14 @@ const MarComponents = [
   MarCreateButtonComponent,
   MarGridPanelComponent,
   ModalWindowComponent,
-  MarSelectComponent
+  MarSelectComponent,
+
 
 ]
 
 @NgModule({
   declarations: [
-    MarComponents,
-
+    MarComponents
   ],
   imports: [
     CommonModule,
@@ -40,7 +43,8 @@ const MarComponents = [
     MatIconModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+
 
 
   ],

@@ -10,15 +10,21 @@ import { AppointmentList } from '../../models/appointmentList.model';
 import { ModalViewService } from 'src/app/modules/common/services/modal-view.service';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { CreateAppointmentComponent } from '../create-appointment/create-appointment.component';
+import { ModalWindowComponent } from 'src/app/modules/common/components/modal-window/modal-window.component';
+import { windowModel } from 'src/app/modules/common/components/modal-window/models/mar-window.model';
+import { CreateEditData } from './models/create-edit-data.model';
+
 
 
 @Component({
   selector: 'app-mar-appointment-list',
   templateUrl: './mar-appointment-list.component.html',
-  styleUrls: ['./mar-appointment-list.component.scss'],
+  styleUrls: ['./mar-appointment-list.component.scss']
 })
 export class MarAppointmentListComponent implements OnInit {
   listSettings!: MarGridListSetting;
+
+
 
   constructor(public matDialog: MatDialog){}
 
@@ -87,17 +93,24 @@ export class MarAppointmentListComponent implements OnInit {
           type: 'description',
         },
       ],
-      data: this.items_appointments.map(this.mapAppointmentList),
+      data: this.items_appointments.map(this.mapAppointmentList)
     };
   }
 
-  showCreateDialog(){
 
-    this.matDialog.open(CreateAppointmentComponent).afterClosed().subscribe((result)=>{
+
+  showCreateDialog(event_data: CreateEditData ) :void{
+
+    this.matDialog.open(CreateAppointmentComponent, {data: { buttonType :event_data.buttonType, itemData: event_data.itemData }}).afterClosed().subscribe((result)=>{
       this.listSettings.data = this.items_appointments.map(this.mapAppointmentList)})
   }
 
+  deleteItem(event_data: AppointmentList){
 
+    this.items_appointments = this.items_appointments.filter((appointments) => appointments.id !== event_data.id);
+    this.listSettings.data = this.items_appointments.map(this.mapAppointmentList)
+
+  }
 
 
 
@@ -108,4 +121,10 @@ export class MarAppointmentListComponent implements OnInit {
   sayBBB(event: Pet) {
     alert(event.name);
   }
+
+
+
+
+
+
 }

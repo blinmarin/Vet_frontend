@@ -15,12 +15,7 @@ export class MarEditButtonComponent{
   @Output() edit = new EventEmitter();
   @Input() pet!: Pet;
 
-  editFunction(){
-    // this.pet.name = 'Abobus' + this.pet.name;
-    // this.blabla.emit(this.pet);
-    this.edit.emit();
 
-  }
 
 }
 

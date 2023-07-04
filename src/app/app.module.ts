@@ -9,14 +9,15 @@ import { PetsModule } from './modules/pets/pets.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     AppointmentsModule,
     OwnersModule,
-    PetsModule],
+    PetsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

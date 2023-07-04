@@ -14,11 +14,11 @@
     </ng-container>
 
     <div>
-      <app-mar-edit-button (edit)="sendAppointmentData(dat)" title='Редактировать'></app-mar-edit-button>
+      <app-mar-edit-button (click)='showEditDialog(dat)' title='Редактировать'></app-mar-edit-button>
     </div>
 
     <div>
-      <app-mar-delete-button title='Удалить'></app-mar-delete-button>
+      <app-mar-delete-button (click)='deleteItem(dat)' title='Удалить'></app-mar-delete-button>
     </div>
 
   </div>

@@ -30,6 +30,13 @@ export const appointments: Appointment[] = [
     owner: pets[3].owner,
     status: AppointmentStatus.rescheduled,
     description: 'Имя Ибрагим вам что-нибудь говорит? Прекрасное имя. Аллах акбар.'
+  },
+  {
+    id: 4,
+    pet: pets[0],
+    owner: pets[0].owner,
+    status: AppointmentStatus.canceled,
+    description: 'Ну что там с деньгами?'
   }
 
 ]

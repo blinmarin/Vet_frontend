@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Inject, EventEmitter, Input, Output } from '@angular/core';
 import { Owner } from 'src/app/modules/owners/models/owner.model';
 import { Pet } from 'src/app/modules/pets/models/pet.model';
 import { owners } from 'src/data/owner.data';
@@ -7,20 +7,28 @@ import { Appointment } from '../../models/appointment.model';
 import { appointments } from 'src/data/appointment.data';
 import { AnimalType } from 'src/app/modules/pets/models/pet.model.enum';
 import { AppointmentStatus } from '../../models/appointment.model.enum';
-import { MatDialog } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { selectModel } from 'src/app/modules/common/components/mar-select/models/grid-select.model';
+import { AppointmentList } from '../../models/appointmentList.model';
+import { _isTestEnvironment } from '@angular/cdk/platform';
 
 @Component({
   selector: 'app-create-appointment',
   templateUrl: './create-appointment.component.html',
   styleUrls: ['./create-appointment.component.scss']
 })
+
 export class CreateAppointmentComponent {
+
+
   textInput_type!: AnimalType;
   textInput_status!: AppointmentStatus;
 
-  constructor(public matDialog: MatDialog){}
 
+  constructor(
+    private _dialogRef: MatDialogRef<CreateAppointmentComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: {buttonType: string, itemData: AppointmentList}
+  ){}
 
   getSelectOptionAnimal(event: any){
     this.textInput_type = event;
@@ -68,11 +76,10 @@ export class CreateAppointmentComponent {
 
     console.log(appointments);
 
-    this.matDialog.closeAll();
+
+    this._dialogRef.close();
 
   }
-
-
 
   typesAnimals: selectModel[] = [
     {value: AnimalType.cat, view: 'котик'},
@@ -85,6 +92,29 @@ export class CreateAppointmentComponent {
     {value: AppointmentStatus.registered, view: 'Клиент записан'},
     {value: AppointmentStatus.completed, view: 'Приём проведен'},
     {value: AppointmentStatus.rescheduled, view: 'Запись перенесена'},
-    {value: AppointmentStatus.canceled, view: 'Запись проведена'},
+    {value: AppointmentStatus.canceled, view: 'Запись отменена'},
   ];
+
+
+  editAppointmentData(item: AppointmentList,
+                      textInput_pet: string,
+                      textInput_name: string,
+                      textInput_phone: string,
+                      textInput_description: string,
+                    ){
+
+  let appointment = appointments.find(appointment => appointment.id === item.id)
+
+  if (appointment != undefined){
+    appointment.status = this.textInput_status?this.textInput_status:item.status;
+    appointment.pet.type = this.textInput_type?this.textInput_type:item.pet_type;
+    appointment.pet.name = textInput_pet;
+    appointment.owner.name = textInput_name;
+    appointment.owner.phone = textInput_phone;
+    appointment.description = textInput_description
+  }
+
+  this._dialogRef.close();
+
+  }
 }
