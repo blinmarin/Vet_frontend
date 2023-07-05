@@ -13,6 +13,8 @@ import { CreateAppointmentComponent } from '../create-appointment/create-appoint
 import { ModalWindowComponent } from 'src/app/modules/common/components/modal-window/modal-window.component';
 import { windowModel } from 'src/app/modules/common/components/modal-window/models/mar-window.model';
 import { CreateEditData } from './models/create-edit-data.model';
+import { AppointmentStatus } from '../../models/appointment.model.enum';
+import { AnimalType } from 'src/app/modules/pets/models/pet.model.enum';
 
 
 
@@ -106,15 +108,39 @@ export class MarAppointmentListComponent implements OnInit {
 
 
 
-  showCreateDialog(event_data: CreateEditData ) :void{
+  showCreateDialog() :void{
+
+    let empty_object: AppointmentList = {
+      id: -1,
+      status: AppointmentStatus.empty,
+      pet_type: AnimalType.empty,
+      pet_name: '',
+      owner_name: '',
+      owner_number: '',
+      description: '',
+      isDeleted: false
+    }
+
+    let data:CreateEditData={
+      buttonType: 'create-button',
+      itemData: empty_object
+    }
+
+    this.matDialog.open(CreateAppointmentComponent, {data: { buttonType :data.buttonType, itemData: data.itemData }}).afterClosed().subscribe((result)=>{
+      this.listSettings.data = this.items_appointments.map(this.mapAppointmentList)})
+  }
+
+  showEditDialog(event_data: CreateEditData) :void{
+
 
     this.matDialog.open(CreateAppointmentComponent, {data: { buttonType :event_data.buttonType, itemData: event_data.itemData }}).afterClosed().subscribe((result)=>{
       this.listSettings.data = this.items_appointments.map(this.mapAppointmentList)})
   }
 
+
   deleteItem(event_data: AppointmentList){
     let appointment = appointments.find(appointment => appointment.id === event_data.id)
-    if (appointment != undefined){
+    if (appointment != undefined && appointment!=null){
       appointment.isDeleted=true
     }
 

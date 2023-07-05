@@ -21,7 +21,7 @@ export class MarGridListComponent{
   @Input() gridAreas!: string
 
 
-  showEditDialog(dat: AppointmentList){
+  showEditDialog(dat: any){
 
     let data: CreateEditData ={
       buttonType: 'edit-button',
@@ -30,7 +30,7 @@ export class MarGridListComponent{
     this.showDialogClick.emit(data)
   }
 
-  deleteItem(dat: AppointmentList){
+  deleteItem(dat: any){
     this.deleteItemClick.emit(dat)
     //dat.isDeleted = true
     //appointments.filter((appointments) => appointments.id === dat.id);

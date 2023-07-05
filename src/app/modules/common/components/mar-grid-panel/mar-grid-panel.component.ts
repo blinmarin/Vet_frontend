@@ -23,22 +23,7 @@ export class MarGridPanelComponent {
 
 
   showDialog(){
-    let empty_object: AppointmentList = {
-      id: -1,
-      status: AppointmentStatus.empty,
-      pet_type: AnimalType.empty,
-      pet_name: '',
-      owner_name: '',
-      owner_number: '',
-      description: '',
-      isDeleted: false
-    }
-    let data:CreateEditData={
-      buttonType: 'create-button',
-      itemData: empty_object
-    }
-
-    this.showDialogClick.emit(data)
+    this.showDialogClick.emit()
   }
 
 

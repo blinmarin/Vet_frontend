@@ -1,1 +1,2 @@
-<app-mar-grid-list [gridAreas]="'2fr 10fr 1fr 1fr'" [settings]='listSettings'></app-mar-grid-list>
+<app-mar-grid-panel (showDialogClick)='showCreateDialog()' ></app-mar-grid-panel>
+<app-mar-grid-list (deleteItemClick)="deleteItem($event)" (showDialogClick)='showEditDialog($event)' [gridAreas]="'2fr 10fr 1fr 1fr'" [settings]='listSettings'></app-mar-grid-list>

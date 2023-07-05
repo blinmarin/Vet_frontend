@@ -1,0 +1,29 @@
+<div class="container">
+
+
+  <ng-container body>
+      <p class="head" *ngIf=" data.buttonType== 'create-button'">Создать запись</p>
+      <p class="head" *ngIf="data.buttonType == 'edit-button'">Редактировать запись</p>
+
+      <div class="wrapper">
+        <p class="text">Имя владельца: </p>
+        <input #textInput_name class="textarea" type="text" value={{data.itemData.name}}>
+      </div>
+      <div class="wrapper">
+        <p class="text">Номер владельца: </p>
+        <input #textInput_phone class="textarea" type="text" value={{data.itemData.phone}}>
+      </div>
+
+    </ng-container>
+
+    <ng-container footer>
+      <div class="button-wrapper" *ngIf="data.buttonType == 'create-button'">
+        <button (click)="saveOwnerData(textInput_name.value, textInput_phone.value)">Создать</button>
+      </div>
+
+      <div class="button-wrapper" *ngIf="data.buttonType == 'edit-button'">
+        <button (click)="editOwnerData(data.itemData, textInput_name.value, textInput_phone.value)">Редактировать</button>
+      </div>
+    </ng-container>
+
+  </div>
