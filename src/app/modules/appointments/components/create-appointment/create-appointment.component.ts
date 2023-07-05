@@ -1,4 +1,4 @@
-import { Component, Inject, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Owner } from 'src/app/modules/owners/models/owner.model';
 import { Pet } from 'src/app/modules/pets/models/pet.model';
 import { owners } from 'src/data/owner.data';
@@ -7,7 +7,7 @@ import { Appointment } from '../../models/appointment.model';
 import { appointments } from 'src/data/appointment.data';
 import { AnimalType } from 'src/app/modules/pets/models/pet.model.enum';
 import { AppointmentStatus } from '../../models/appointment.model.enum';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { selectModel } from 'src/app/modules/common/components/mar-select/models/grid-select.model';
 import { AppointmentList } from '../../models/appointmentList.model';
 import { _isTestEnvironment } from '@angular/cdk/platform';
@@ -20,10 +20,8 @@ import { _isTestEnvironment } from '@angular/cdk/platform';
 
 export class CreateAppointmentComponent {
 
-
   textInput_type!: AnimalType;
   textInput_status!: AppointmentStatus;
-
 
   constructor(
     private _dialogRef: MatDialogRef<CreateAppointmentComponent>,
@@ -37,7 +35,6 @@ export class CreateAppointmentComponent {
   getSelectOptionStatus(event: any){
     this.textInput_status = event;
   }
-
 
   saveAppointmentData(textInput_pet: string,
                       textInput_name: string,
@@ -63,7 +60,6 @@ export class CreateAppointmentComponent {
       owner: owners[OwnerItem.id],
       isDeleted: false
     }
-
     pets.push(PetItem);
 
     let AppointmentItem: Appointment = {
@@ -74,11 +70,9 @@ export class CreateAppointmentComponent {
       description: textInput_description,
       isDeleted: false
     }
-
     appointments.push(AppointmentItem);
 
     console.log(appointments);
-
 
     this._dialogRef.close();
 
@@ -98,7 +92,6 @@ export class CreateAppointmentComponent {
     {value: AppointmentStatus.canceled, view: 'Запись отменена'},
   ];
 
-
   editAppointmentData(item: AppointmentList,
                       textInput_pet: string,
                       textInput_name: string,
@@ -114,7 +107,7 @@ export class CreateAppointmentComponent {
     appointment.pet.name = textInput_pet;
     appointment.owner.name = textInput_name;
     appointment.owner.phone = textInput_phone;
-    appointment.description = textInput_description
+       appointment.description = textInput_description
   }
 
   this._dialogRef.close();

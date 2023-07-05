@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CdkAccordionModule } from '@angular/cdk/accordion';
@@ -10,13 +10,10 @@ import { MarEditButtonComponent } from './components/icons-button/mar-edit-butto
 import { MarGridTemplateComponent } from './components/mar-grid-template/mar-grid-template.component';
 import { MarCreateButtonComponent } from './components/icons-button/mar-create-button/mar-create-button.component';
 import { MarGridPanelComponent } from './components/mar-grid-panel/mar-grid-panel.component';
-import { ModalWindowComponent } from './components/modal-window/modal-window.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { MarSelectComponent } from './components/mar-select/mar-select.component';
-import { MarAppointmentListComponent } from '../appointments/components/mar-appointment-list/mar-appointment-list.component';
-import { CreateAppointmentComponent } from '../appointments/components/create-appointment/create-appointment.component';
 
 
 const MarComponents = [
@@ -27,10 +24,7 @@ const MarComponents = [
   MarGridTemplateComponent,
   MarCreateButtonComponent,
   MarGridPanelComponent,
-  ModalWindowComponent,
   MarSelectComponent,
-
-
 ]
 
 @NgModule({
@@ -44,10 +38,8 @@ const MarComponents = [
     MatDialogModule,
     MatFormFieldModule,
     MatSelectModule,
-
-
-
   ],
+
   exports:[
     MarComponents,
   ],

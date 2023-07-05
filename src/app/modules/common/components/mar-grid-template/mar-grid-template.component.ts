@@ -1,8 +1,7 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MarGridColumn } from '../mar-grid-list/models/mar-grid-column.model';
 
 @Component({
-  //changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-mar-grid-template',
   templateUrl: './mar-grid-template.component.html',
   styleUrls: ['./mar-grid-template.component.scss']

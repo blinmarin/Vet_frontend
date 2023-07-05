@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { Pet } from '../../../../pets/models/pet.model';
-import { MarGridListSetting } from '../../mar-grid-list/models/mar-grid-list-setting.model';
 
 @Component({
   selector: 'app-mar-edit-button',

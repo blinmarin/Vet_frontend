@@ -5,7 +5,6 @@ import { pets } from 'src/data/pet.data';
 import { PetList } from '../../models/petList.model';
 import { CreateEditData } from 'src/app/modules/appointments/components/mar-appointment-list/models/create-edit-data.model';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateAppointmentComponent } from 'src/app/modules/appointments/components/create-appointment/create-appointment.component';
 import { CreatePetComponent } from '../create-pet/create-pet.component';
 import { AnimalType } from '../../models/pet.model.enum';
 

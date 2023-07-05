@@ -1,12 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MarGridListSetting } from './models/mar-grid-list-setting.model';
-import { AppointmentList } from 'src/app/modules/appointments/models/appointmentList.model';
-import { windowModel } from '../modal-window/models/mar-window.model';
 import { CreateEditData } from 'src/app/modules/appointments/components/mar-appointment-list/models/create-edit-data.model';
-import { appointments } from 'src/data/appointment.data';
-
-
-
 
 @Component({
   selector: 'app-mar-grid-list',
@@ -32,14 +26,6 @@ export class MarGridListComponent{
 
   deleteItem(dat: any){
     this.deleteItemClick.emit(dat)
-    //dat.isDeleted = true
-    //appointments.filter((appointments) => appointments.id === dat.id);
-
-
-
-
-    // .afterClosed().subscribe((result)=>{
-    //   this.listSettings.data = this.items_appointments.map(this.mapAppointmentList)})
   }
 
 }

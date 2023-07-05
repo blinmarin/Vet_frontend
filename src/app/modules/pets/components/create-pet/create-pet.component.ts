@@ -5,10 +5,8 @@ import { selectModel } from 'src/app/modules/common/components/mar-select/models
 import { AnimalType } from '../../models/pet.model.enum';
 import { pets } from 'src/data/pet.data';
 import { owners } from 'src/data/owner.data';
-import { appointments } from 'src/data/appointment.data';
 import { Owner } from 'src/app/modules/owners/models/owner.model';
 import { Pet } from '../../models/pet.model';
-import { AppointmentList } from 'src/app/modules/appointments/models/appointmentList.model';
 
 @Component({
   selector: 'app-create-pet',
