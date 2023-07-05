@@ -5,5 +5,6 @@ export interface Pet{
   id: number,
   name: string,
   type: AnimalType,
-  owner: Owner
+  owner: Owner,
+  isDeleted: boolean
 }

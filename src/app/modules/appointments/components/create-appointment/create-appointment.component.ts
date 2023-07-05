@@ -51,7 +51,8 @@ export class CreateAppointmentComponent {
     let OwnerItem: Owner = {
       id: owner_id+1,
       name: textInput_name,
-      phone: textInput_phone
+      phone: textInput_phone,
+      isDeleted: false
     }
     owners.push(OwnerItem);
 
@@ -59,7 +60,8 @@ export class CreateAppointmentComponent {
       id: pet_id+1,
       name: textInput_pet,
       type: this.textInput_type,
-      owner: owners[OwnerItem.id]
+      owner: owners[OwnerItem.id],
+      isDeleted: false
     }
 
     pets.push(PetItem);
@@ -69,7 +71,8 @@ export class CreateAppointmentComponent {
       pet: pets[PetItem.id],
       owner: pets[PetItem.id].owner,
       status: AppointmentStatus.registered,
-      description: textInput_description
+      description: textInput_description,
+      isDeleted: false
     }
 
     appointments.push(AppointmentItem);
@@ -105,7 +108,7 @@ export class CreateAppointmentComponent {
 
   let appointment = appointments.find(appointment => appointment.id === item.id)
 
-  if (appointment != undefined){
+  if (appointment != undefined && appointment!= null){
     appointment.status = this.textInput_status?this.textInput_status:item.status;
     appointment.pet.type = this.textInput_type?this.textInput_type:item.pet_type;
     appointment.pet.name = textInput_pet;

@@ -1,6 +1,6 @@
 <div class="wrapper">
   <mat-select class="arrow" [(value)]="label">
-    <mat-option [value]='item.value' (click)="sendSelectOption(item.value)" *ngFor="let item of typeVariants">{{item.view}}</mat-option>
+    <mat-option class="select" [value]='item.value' (click)="sendSelectOption(item.value)" *ngFor="let item of typeVariants">{{item.view}}</mat-option>
   </mat-select>
 </div>
 

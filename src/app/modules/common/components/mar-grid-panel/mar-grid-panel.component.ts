@@ -31,6 +31,7 @@ export class MarGridPanelComponent {
       owner_name: '',
       owner_number: '',
       description: '',
+      isDeleted: false
     }
     let data:CreateEditData={
       buttonType: 'create-button',

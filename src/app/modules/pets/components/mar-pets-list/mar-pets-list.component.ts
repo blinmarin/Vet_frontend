@@ -18,7 +18,8 @@ export class MarPetsListComponent {
       id: pet_item.id,
       name: pet_item.name,
       type: pet_item.type,
-      owner_name: pet_item.owner.name
+      owner_name: pet_item.owner.name,
+      isDeleted: pet_item.isDeleted
     };
     return dat;
   }
@@ -49,6 +50,12 @@ export class MarPetsListComponent {
           caption: 'Хозяин',
           dataField: 'owner_name',
           visible: true,
+          type: 'default',
+        },
+        {
+          caption: 'isDeleted',
+          dataField: 'isDeleted',
+          visible: false,
           type: 'default',
         }
     ],

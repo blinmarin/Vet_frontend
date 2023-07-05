@@ -32,6 +32,7 @@ export class MarGridListComponent{
 
   deleteItem(dat: AppointmentList){
     this.deleteItemClick.emit(dat)
+    //dat.isDeleted = true
     //appointments.filter((appointments) => appointments.id === dat.id);
 
 

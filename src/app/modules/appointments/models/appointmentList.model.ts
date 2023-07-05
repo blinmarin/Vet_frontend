@@ -9,4 +9,5 @@ export interface AppointmentList{
   owner_name: string,
   owner_number: string,
   description: string,
+  isDeleted: boolean
 }

@@ -42,6 +42,7 @@ export class MarAppointmentListComponent implements OnInit {
       owner_name: appointment_item.owner.name,
       owner_number: appointment_item.owner.phone,
       description: appointment_item.description,
+      isDeleted: appointment_item.isDeleted
     };
     return dat;
   }
@@ -92,6 +93,12 @@ export class MarAppointmentListComponent implements OnInit {
           visible: true,
           type: 'description',
         },
+        {
+          caption: 'isDeleted',
+          dataField: 'isDeleted',
+          visible: false,
+          type: 'default',
+        }
       ],
       data: this.items_appointments.map(this.mapAppointmentList)
     };
@@ -106,8 +113,11 @@ export class MarAppointmentListComponent implements OnInit {
   }
 
   deleteItem(event_data: AppointmentList){
+    let appointment = appointments.find(appointment => appointment.id === event_data.id)
+    if (appointment != undefined){
+      appointment.isDeleted=true
+    }
 
-    this.items_appointments = this.items_appointments.filter((appointments) => appointments.id !== event_data.id);
     this.listSettings.data = this.items_appointments.map(this.mapAppointmentList)
 
   }

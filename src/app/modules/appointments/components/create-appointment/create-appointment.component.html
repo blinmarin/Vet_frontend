@@ -6,13 +6,13 @@
         <p class="head" *ngIf=" data.buttonType== 'create-button'">Создать запись</p>
         <p class="head" *ngIf="data.buttonType == 'edit-button'">Редактировать запись</p>
 
-        <div class="wrapper" *ngIf="data.buttonType == 'edit-button'">
+        <div class="select-wrapper" *ngIf="data.buttonType == 'edit-button'">
           <p class="text">Статус: </p>
-          <app-mar-select class="textarea" [label]="data.itemData.status" [typeVariants]='typesStatus' (typeSelectOption)='getSelectOptionStatus($event)'></app-mar-select>
+          <app-mar-select class="select" [label]="data.itemData.status" [typeVariants]='typesStatus' (typeSelectOption)='getSelectOptionStatus($event)'></app-mar-select>
         </div>
-        <div class="wrapper">
+        <div class="select-wrapper">
           <p class="text">Вид животного: </p>
-          <app-mar-select class="textarea" [label]="data.itemData.pet_type" [typeVariants]='typesAnimals' (typeSelectOption)='getSelectOptionAnimal($event)'></app-mar-select>
+          <app-mar-select class="select" [label]="data.itemData.pet_type" [typeVariants]='typesAnimals' (typeSelectOption)='getSelectOptionAnimal($event)'></app-mar-select>
         </div>
         <div class="wrapper">
           <p class="text">Кличка питомца: </p>
@@ -28,7 +28,7 @@
         </div>
         <div class="wrapper">
           <p class="text">Описание: </p>
-          <textarea #textInput_description class="textarea-description">{{data.itemData.description}}</textarea>
+          <textarea #textInput_description class="textarea description">{{data.itemData.description}}</textarea>
         </div>
       </ng-container>
 

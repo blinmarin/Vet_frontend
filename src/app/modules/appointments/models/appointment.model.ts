@@ -7,5 +7,6 @@ export interface Appointment{
   pet: Pet,
   owner: Owner,
   status: AppointmentStatus,
-  description: string
+  description: string,
+  isDeleted: boolean
 }
