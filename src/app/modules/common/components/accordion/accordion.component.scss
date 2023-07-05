@@ -1,0 +1,23 @@
+.example-accordion-item-body {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  margin-right: 30px;
+}
+
+.example-accordion-item-header {
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.example-accordion-item-header:hover {
+  cursor: pointer;
+}
+
+.more-less-button {
+  height: 23px;
+  width: 30px;
+  font-size: 35px;
+}

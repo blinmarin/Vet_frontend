@@ -1,0 +1,26 @@
+<div class='head' [style.grid-template-columns]='gridAreas'>
+  <ng-container *ngFor='let column of settings.columns'>
+    <div *ngIf="column.visible">
+      {{column.caption}}
+    </div>
+  </ng-container>
+</div>
+
+
+  <ng-container  *ngFor="let dat of settings.data">
+    <div class="wrapper" [style.grid-template-columns]='gridAreas' *ngIf="dat.isDeleted!=true">
+      <ng-container *ngFor="let column of settings.columns">
+        <app-mar-grid-template *ngIf="column.visible" [data]='dat[column.dataField]' [column]="column">
+        </app-mar-grid-template>
+      </ng-container>
+
+      <div>
+        <app-mar-edit-button (click)='showEditDialog(dat)' title='Редактировать'></app-mar-edit-button>
+      </div>
+
+      <div>
+        <app-mar-delete-button (click)='deleteItem(dat)' title='Удалить'></app-mar-delete-button>
+      </div>
+    </div>
+  </ng-container>
+

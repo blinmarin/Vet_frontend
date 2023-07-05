@@ -1,0 +1,46 @@
+// список
+
+.wrapper {
+  display: grid;
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+  margin: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: #3d6594;
+  padding: 20px;
+  border-radius: 25px;
+
+  &:hover {
+    transition-duration: 0.2s;
+    background-color: #6495ED;
+    transform: scale(1.02);
+  }
+
+  .status {
+    border-radius: 25px;
+    width: 12px;
+  }
+}
+
+
+// заголовки
+
+.head {
+  display: grid;
+  font-size: 14px;
+  color: #3d6594;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  margin-left: 30px;
+  margin-right: 30px;
+  border: 2px solid #3d6594;
+  background-color: #b8d1db;
+  padding: 10px;
+  border-radius: 25px;
+
+}
+
+
+

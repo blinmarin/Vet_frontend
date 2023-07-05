@@ -1,0 +1,18 @@
+<cdk-accordion class="example-accordion">
+  <cdk-accordion-item #accordionItem="cdkAccordionItem" class="example-accordion-item" role="button"
+    [attr.aria-expanded]="accordionItem.expanded">
+
+    <div class="example-accordion-item-body" #bodyy role="region"
+      [style.-webkit-line-clamp]="accordionItem.expanded ? '' : '2'"
+      [style.height]="accordionItem.expanded ? '' : '40px'">
+      {{text}}
+    </div>
+
+    <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+      <span class="example-accordion-item-description">
+        <mat-icon class="more-less-button">{{ accordionItem.expanded ? 'expand_less' : 'expand_more'}}</mat-icon>
+      </span>
+    </div>
+
+  </cdk-accordion-item>
+</cdk-accordion>

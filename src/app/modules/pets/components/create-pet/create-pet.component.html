@@ -1,0 +1,34 @@
+<div class="container">
+
+
+  <ng-container body>
+      <p class="head" *ngIf=" data.buttonType== 'create-button'">Создать запись</p>
+      <p class="head" *ngIf="data.buttonType == 'edit-button'">Редактировать запись</p>
+
+
+      <div class="select-wrapper">
+        <p class="text">Вид животного: </p>
+        <app-mar-select class="select" [label]="data.itemData.type" [typeVariants]='typesAnimals' (typeSelectOption)='getSelectOptionAnimal($event)'></app-mar-select>
+      </div>
+      <div class="wrapper">
+        <p class="text">Кличка питомца: </p>
+        <input #textInput_pet class="textarea" type="text" value={{data.itemData.name}}>
+      </div>
+      <div class="wrapper">
+        <p class="text">Хозяин: </p>
+        <input #textInput_owner class="textarea" type="text" value={{data.itemData.owner_name}}>
+      </div>
+
+    </ng-container>
+
+    <ng-container footer>
+      <div class="button-wrapper" *ngIf="data.buttonType == 'create-button'">
+        <button (click)="savePetData(textInput_pet.value, textInput_owner.value)">Создать</button>
+      </div>
+
+      <div class="button-wrapper" *ngIf="data.buttonType == 'edit-button'">
+        <button (click)="editPetData(data.itemData, textInput_pet.value, textInput_owner.value)">Редактировать</button>
+      </div>
+    </ng-container>
+
+  </div>

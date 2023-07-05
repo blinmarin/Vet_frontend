@@ -1,0 +1,45 @@
+::ng-deep .mat-mdc-select{
+  height: 30px;
+  width: 160px;
+}
+
+::ng-deep .mat-mdc-select-arrow{
+  height: 100% !important;
+}
+
+::ng-deep .mat-mdc-select-arrow-wrapper{
+  height: 100% !important;
+}
+
+::ng-deep .mat-mdc-select-value{
+  height: 100%;
+}
+
+::ng-deep .mat-mdc-select-trigger{
+  height: 100%;
+}
+
+::ng-deep .mat-mdc-select-value-text{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  padding-left: 5px;
+}
+::ng-deep .mat-mdc-select-arrow svg{
+  height: 30px;
+  top: 50% !important;
+  left: -20% !important;
+  background-color: #3d6594;
+  color: white;
+}
+
+.wrapper{
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.select{
+  font-size: 14px;
+}
+
+
+
